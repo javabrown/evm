@@ -168,7 +168,7 @@ label > input + img:click {
 }
 
 .evm1 {
-  background: url(http://img01.ibnlive.in/ibnlive/uploads/2012/01/evmoney630.jpg) no-repeat center center fixed;
+  background: url(img/evm.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

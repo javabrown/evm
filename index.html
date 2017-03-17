@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link data-require="bootstrap-css@3.x" data-semver="3.2.0" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+  <script data-require="angular.js@*" data-semver="1.3.0" src="//code.angularjs.org/1.3.0/angular.js"></script>
+  <script data-require="ui-bootstrap@0.10.0" data-semver="0.10.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href='//fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!--meta name="viewport" content="width=device-width, initial-scale=1" -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <title>Basic JavaScript Programs (B.J.P)</title>
+  <meta name="description" content="Basic JavaScript Programs  (B.J.P) - Showcase Apps for JavaScript, AngularJS, ReactJS Plateform. This site is open for Sale">
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  
+  <script src="js/script.js"></script>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49037806-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+
+<body class="evm-wall" ng-app="myapp" ng-controller="FraudVote">
+
+
+  <div class="container container-fluid evm_container">
+
+    <div class="row">
+
+
+      <div class="panel panel-primary">
+
+        <div class="panel-heading">
+          <!-- h4>Cast Your Vote:<label class="pull-right"></label></h4 -->
+          <div class="row">
+            <div class="col-xs-6">
+              <label class="h3">EVM Fraud - Demo</label>
+            </div>
+
+            <div class="col-xs-6">
+              <div class="pull-right">
+                <div class="form-group">
+                  <Label class="form-group label label-danger">Fraud Setting - Select a Winner</Label>
+
+                  <select ng-disabled1="voteControl.on" class="form-control" data-show-icon="true" placeholder="Fix Vote Winner" name="singleSelect" id="singleSelect" ng-model="voteControl.winnerKey" ng-change="onWinSelectChange()" ng-click="onWinSelectChange()">
+                    <option value="none">Genunie Voting</option>
+                    <option value="{{x.hashKey}}" ng-repeat="x in data">{{x.condidateName}} - Fixed Winner</option>
+                  </select>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-body">
+
+          <div>
+            <!-- span ng-show="voteControl.on" class="bladge pull-right">
+              <i class="glyphicon glyphicon-blackboard"></i> {{voteControl.totalVoteCount}}
+            </span -->
+
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <!-- th>#</th -->
+                  <th>Party Sign</th>
+                  <th>Candidate Name</th>
+                  <th>Real Vote</th>
+                  <!-- th>Election Logo</th -->
+                  <th ng-show="voteControl.showResult && !voteControl.on  && voteControl.totalVoteCount > 0">Election Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="a in data" ng-click="getselectedRow(a)">
+                  <!-- th scope="row">
+                        <label class="">{{a.condidateID}}</label>
+                      </th -->
+                  <td align="center" class="vote-logo-td" ng-class="{ 'vote-on rkbtn': voteControl.on }" class1="vote-on" >
+                    <label>
+                      <input ng-disabled="!voteControl.on || voteControl.showResult" type="radio" name="canidate" value="small" ng-value="a" ng-model="voteControl.selected" ng-click="chengeEvnt($index);voteForPerson();">
+                      <img ng-disabled="!voteControl.on || voteControl.showResult"  ng-class="{ 'vote-on rkbtn glow': voteControl.on }" class=" icon img-thumbnail size desaturate" src="{{a.logo}}" style=" "/></input>
+                    </label>
+                  </td>
+                  <td>
+                    <label class="font-2">{{a.condidateName}}</label>
+                  </td>
+                  <td>
+                    <label class="font-2">{{a.voteCount}}</label>
+                  </td>
+
+                  <td ng-show="voteControl.showResult && voteControl.totalVoteCount > 0">
+                    <label ng-show="voteControl.showResult && !a.isWinner" class=" img-thumbnail font-2">
+                      <b>LOST</b>
+                      <span class="badge font-2">{{a.vote1}} Votes</span>
+                    </label>
+
+                    <span ng-show="voteControl.showResult && a.isWinner && !isDrawResult()" class="img-thumbnail btn-success font-2">
+                        <b>WON</b>
+                        <span class="badge flash font-21">{{a.vote1}} Votes</span>
+                    </span>
+
+                    <span ng-show="voteControl.showResult && a.isWinner && isDrawResult()" class="img-thumbnail btn-warning font-2">
+                        <b>DRAW</b>
+                        <span class="badge flash font-2">{{a.vote1}} Votes</span>
+                    </span>
+
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+            <div class="row" id="footer">
+              <button class="vote-btn btn btn-primary btn-lg active btn-block btn-success" aria-pressed="true" ng-click="startVoting()" ng-show="!voteControl.on && !voteControl.done">
+                <span class="vote-btn blink" ng-show="!voteControl.showResult">START VOTING</span><span ng-show="voteControl.showResult">RESTART VOTING</span>
+              </button>
+              <button class="vote-btn btn btn-primary btn-lg active btn-block btn-success flash" aria-pressed="true" ng-click="countVote()" ng-show="voteControl.done && !voteControl.on"><b>SHOW VOTING RESULT - VOTE COUNT</b></button>
+              <button class="vote-btn btn btn-primary btn-lg active btn-block btn-danger" aria-pressed="true" ng-click="stopVoting()" ng-disabled="voteControl.totalVoteCount <= 0" ng-show="voteControl.on">FINISH VOTING</button>
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+    <!-- div class="row well">
+        <div class="col-xs-4 pull-left">
+          <button class="btn btn-primary form-control font-1" ng-click="startVoting()" ng-show="!voteControl.on && !voteControl.done">Start Voting</button>
+        </div>
+  
+        <div class="col-xs-4">
+          <button class="btn btn-primary form-control font-2" ng-click="countVote()" ng-show="voteControl.done && !voteControl.on">Count Votes</button>
+        </div>
+  
+        <div class="col-xs-4 pull-right">
+          <button class="btn btn-primary form-control font-2" ng-click="stopVoting()" ng-show="voteControl.on">End Voting</button>
+        </div>
+
+    </div -->
+
+</body>
+
+<br/><p style="color:red">Disclaimer: This website is for fun & self learning purpose only. Content of this website are uploaded dynamically by the developers, bjpindia.org does not hold responsibily of it's conetent. This is for fun purpose only. It has nothing to do with any organization, country or system. Not for production or any official uses. If you have any question or concern - please write to us.</p>
+<b class="blink" style="color:red">ImageContent Courtesy: WIKI</b>
+<br/>
+
+
+<h5 class="well">This DOMAIN - bjpindia.org is open for sale, if you want to buy this, contact us - info@bjpindia.org</h5>
+
+  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Upload New JS App</button>
+  <div id="demo" class="collapse well">
+     Upload your and run your java-script program: <form actionj="upload.php" method="post" enctype="multipart/form-data"> <input type="file" name="fto"><input type="submit" value="Upload single page app files" name="submit"></form> 
+  </div>
+  <br/>
+
+</html>

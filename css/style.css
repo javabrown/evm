@@ -1,0 +1,336 @@
+@import url("//fonts.googleapis.com/css?family=ABeeZee");
+h5 {
+  font-size: 1.4em;
+}
+
+.h3 {
+  font: normal 1.2em ABeeZee !important;
+}
+
+.h4 {
+  font: normal 0.8em ABeeZee !important;
+}
+
+body {
+  font-family: 'ABeeZee';
+  font-size: 22px;
+}
+
+
+/* Extra small devices (phones, up to 480px) */
+
+@media screen and (max-width: 767px) {}
+
+
+/* Small devices (tablets, 768px and up) */
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+
+/* tablets/desktops and up ----------- */
+
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+
+/* large desktops and up ----------- */
+
+@media screen and (min-width: 1200px) {}
+
+.vote-logo-td {
+  padding-right: 5px !important;
+  padding-left: 5px !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  align: center !important;
+  width: 100px;
+  !important;
+  height: 100px;
+  !important;
+  text-align: center;
+}
+
+.vote-logo-td > img {
+  padding-right: 0px;
+  !important;
+  padding-top: 0px;
+  !important;
+  padding-bottom: 0px;
+  !important;
+  width: 89px;
+  !important;
+  height: 89px;
+  !important;
+  padding-left: 1px;
+  !important;
+  width: 100%;
+  !important;
+  height: 100%;
+  !important;
+  min-height: 100px;
+  !important;
+  max-width: 100px;
+  !important
+}
+
+.size {
+  width: 100%;
+  !important;
+  height: 100%;
+  !important;
+  min-height: 80px;
+  !important;
+  max-width: 80px;
+  !important;
+}
+
+.glow {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: glow;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-name: glow;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes glow {
+  from {
+    box-shadow: 0 0 0px white;
+  }
+  to {
+    box-shadow: 0 0 10px green;
+  }
+}
+
+
+.table td {
+  vertical-align: middle;
+}
+
+.footer {
+  position: fixed;
+  height: 100px;
+  bottom: 0;
+  width: 100%;
+}
+
+label > input {
+  /* HIDE RADIO */
+  visibility: hidden;
+  /* Makes input not-clickable */
+  position: absolute;
+  /* Remove input from document flow */
+}
+
+label > input + img {
+  /* IMAGE STYLES */
+  cursor: pointer;
+  display: block;
+  border: 0px solid transparent;
+}
+
+dellabel > input:checked + img {
+  /* (RADIO CHECKED) IMAGE STYLES */
+  border: 2px solid #f00;
+}
+
+label > input + img:hover {
+  background: rgba(225, 51, 45, 0);
+  letter-spacing: 1px;
+  font-weight: 900;
+}
+
+img.desaturate {
+  filter: grayscale(100%);
+  -webkit-filter: blur(0px);
+  filter: blur(0px), rayscale(100%);
+}
+
+.badge {
+  border-radius: 1em;
+  font-size: 200%;
+}
+
+.rkdiv {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  background: white;
+  background: -moz-linear-gradient(45deg, #E9F2ED 26%, #E8E6DF 70%);
+  background: -webkit-linear-gradient(45deg, #E9F2ED 26%, #E8E6DF 70%);
+  background: -o-linear-gradient(45deg, #E9F2ED 26%, #E8E6DF 70%);
+}
+
+label > input + img:click {
+  background-color: none;
+  opacity: 1;
+}
+
+.evm1 {
+  background: url(http://img01.ibnlive.in/ibnlive/uploads/2012/01/evmoney630.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.evm-wall {
+  background: url(evm.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+.flash {
+  animation-name: flash;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+}
+
+@keyframes flash {
+  from {
+    color: white;
+  }
+  to {
+    color: blue;
+  }
+}
+
+.font-1 {
+  font-size: 15px;
+  font: normal 15px ABeeZee !important;
+}
+
+.font-2 {
+  font-size: 20px;
+  font: normal 15px ABeeZee !important;
+}
+
+
+.vote-btn {
+  
+    padding-top: 10px !important;
+    margin-top: 1px !important;
+    margin-top: 1px !important;
+    margin-top: 1px !important;
+
+}
+
+  .panel-heading {
+    padding-bottom: 1px !important;
+    padding-top: 1px !important;
+  }
+
+@media (min-width: 992px)   {
+  
+  .rkbtn:active{
+    background: gray;
+    filter: grayscale(100%);
+  }
+  
+}
+
+@media (min-width: 100px) and (max-width: 991px) {
+
+  
+  .rkbtn:hover {
+   
+ 
+    -webkit-animation: seconds 1s; 
+  }
+  
+  
+  @-webkit-keyframes seconds {
+    from {
+      background: none;
+      filter: none;      
+    }
+    to {
+        background: gray;
+        filter: grayscale(100%);
+    }
+  }
+
+  @keyframes seconds {
+    from {
+      background: none;
+      filter: none;
+    }
+    to {
+
+      background: gray;
+      filter: grayscale(100%);      
+    }
+  }
+  
+}
+
+
+.vote-on {
+  border-color: gray;
+  -webkit-box-shadow: 0 0 5px gray;
+  -moz-box-shadow: 0 0 5px gray;
+  box-shadow: 0 0 5px gray;
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+
+
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
